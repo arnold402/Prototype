@@ -1,0 +1,118 @@
+
+    <div class="sidebar" data-color="rose" data-background-color="black" data-image="/static/assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+           <a target="_blank" rel="noopener noreferrer"
+              href="https://appseed.us/admin-dashboards/flask-dashboard-material-pro" class="simple-text logo-mini">
+          SA
+        </a>
+        <a target="_blank" rel="noopener noreferrer"
+           href="https://appseed.us/admin-dashboards/flask-dashboard-material-pro" class="simple-text logo-normal">
+          SME ASK
+        </a></div>
+      <div class="sidebar-wrapper">
+        <div class="user">
+          <div class="photo">
+            <img src="/static/assets/img/faces/avatar.jpg" />
+          </div>
+          <div class="user-info">
+            <a data-toggle="collapse" href="#collapseExample" class="username">
+              <span>
+                {{ current_user.username }}
+                <b class="caret"></b>
+              </span>
+            </a>
+            <div class="collapse" id="collapseExample">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/page-user.html">
+                    <span class="sidebar-mini"> MP </span>
+                    <span class="sidebar-normal"> My Profile </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('base_blueprint.logout') }}">
+                    <span class="sidebar-mini"> LO </span>
+                    <span class="sidebar-normal"> Logout </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <ul class="nav">
+          <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+            <a class="nav-link" href="/">
+              <i class="material-icons">dashboard</i>
+              <p> Dashboard </p>
+            </a>
+          </li>
+          <li class="nav-item {% if 'forms-' in segment %} active {% endif %}">
+            <a class="nav-link" data-toggle="collapse" href="#formsExamples">
+              <i class="material-icons">content_paste</i>
+              <p> Entries
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse" id="formsExamples">
+              <ul class="nav">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{{ url_for('home_blueprint.add_sales') }}">
+                    <span class="sidebar-mini"> AS </span>
+                    <span class="sidebar-normal"> Add Sale </span>
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="/add-purchases.html">
+                    <span class="sidebar-mini"> AP </span>
+                    <span class="sidebar-normal"> Add Purchases </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item {% if 'tables-' in segment %} active {% endif %}">
+            <a class="nav-link" data-toggle="collapse" href="#tablesExamples">
+              <i class="material-icons">grid_on</i>
+              <p> Records
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse" id="tablesExamples">
+              <ul class="nav">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{{ url_for('home_blueprint.sales_dashboard') }}">
+                    <span class="sidebar-mini"> SA </span>
+                    <span class="sidebar-normal"> Sales </span>
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="/Purchases.html">
+                    <span class="sidebar-mini"> PU </span>
+                    <span class="sidebar-normal"> Purchases </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item {% if 'calendar' in segment %} active {% endif %}">
+            <a class="nav-link" href="/calendar.html">
+              <i class="material-icons">date_range</i>
+              <p> Calendar </p>
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('base_blueprint.logout') }}">
+              <i class="material-icons">directions_run</i>
+              <p> Logout </p>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>

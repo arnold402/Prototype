@@ -1,0 +1,63 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Forms Regular {% endblock title %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header card-header-rose card-header-text">
+          <div class="card-text">
+            <h4 class="card-title">Add Sale</h4>
+          </div>
+        </div>
+        <div class="card-body ">
+          <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <br>
+            <div class="row">
+              <br>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="username" class="bmd-label-floating">Username</label>
+                  {{ form.username(class="form-control",id="username") }}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email" class="bmd-label-floating">email</label>
+                  {{ form.email(type='email', class="form-control", id="email")}}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="password" class="bmd-label-floating">password</label>
+                  {{ form.password(class="form-control", id="password")}}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Role" class="bmd-label-floating">Role</label>
+                  {{ form.role(class="form-control", id="role")}}
+                </div>
+              </div>
+
+            </div>
+            <br>
+            <div class="">
+              {{ form.submit(type="submit", class="btn btn-fill btn-rose") }}
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block javascripts %}{% endblock javascripts %}

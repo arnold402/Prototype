@@ -1,0 +1,100 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Forms Regular {% endblock title %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header card-header-rose card-header-text">
+          <div class="card-text">
+            <h4 class="card-title">Add Sale</h4>
+          </div>
+        </div>
+        <div class="card-body ">
+          <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div style="border-bottom: solid thin black; font-size: 24px;">Customer Details</div>
+            <br>
+            <div class="row">
+              <br>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cust_name" class="bmd-label-floating">First Name</label>
+                  {{ form.cust_fname(class="form-control",id="cust_fname") }}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cust_name" class="bmd-label-floating">Last Name</label>
+                  {{ form.cust_lname(class="form-control",id="cust_lname") }}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cust_email" class="bmd-label-floating">Customer Email</label>
+                  {{ form.email(type='email', class="form-control", id="cust_email")}}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cust_num" class="bmd-label-floating">Customer Phone Number</label>
+                  {{ form.cust_phone_no(class="form-control", id="cust_num")}}
+                </div>
+              </div>
+            </div>
+            <br>
+            <div style="border-bottom: solid thin black; font-size: 24px;">Product Details</div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="product_code" class="bmd-label-floating">Product Code</label>
+                    {{ form.product_code(class="form-control", id="product_code")}}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="qnt" class="bmd-label-floating">Qnt</label>
+                    {{ form.qnt(class="form-control", id="qnt")}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="product_price" class="bmd-label-floating">Price</label>
+                  {{ form.product_price(class="form-control", id="product_price")}}
+                </div>
+                <div class="col-md-6">
+                  <!--*19240*-->
+                  <select class="selectpicker" data-style="select-with-transition" title="Warranty Status" data-size="7">
+                    <option disabled>WARRANTY STATUS</option>
+                    <option value="1">No Warranty</option>
+                    <option value="2">6 months</option>
+                    <option value="3">12 months</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <!--*19240*-->
+                  <select class="selectpicker" data-style="select-with-transition" title="Delivery" data-size="7">
+                    <option disabled> DELIVERY</option>
+                    <option value="4">Yes</option>
+                    <option value="5">No</option>
+                  </select>
+                </div>
+            </div>
+            <div class="">
+              {{ form.submit(type="submit", class="btn btn-fill btn-rose") }}
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block javascripts %}{% endblock javascripts %}
